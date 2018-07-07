@@ -1,16 +1,16 @@
 $(document).ready(function() {
     // console.log( "ready!" );
 
-    // track which question we are on
+    // To Track the question we are on
     var questionCounter = 0;
-    // initial time of 15 seconds for each question
+    // 15 seconds timelimit for each question
     var time = 15;
-    // will keep tally of right guesses for end game
+    // var will store the number of correct answers
     var correctGuesses = 0;
-    //will keep tally of wrong guesses for end game
+    //var will store the number of correct answers
     var incorrectGuesses = 0;
 
-    // question & answer array
+    // Q & A Array
     var questions = [
       {
 	    question: "Brasilia is the capital of which country?",
@@ -74,9 +74,9 @@ $(document).ready(function() {
 		}];
 	  
 
-	// create question contents according to question count
+	// Creating questions according to the count
 	function questionContent() {
-		// a for loop would be cool here...
+	
     	$("#gameScreen").append("<p><strong>" + 
     		questions[questionCounter].question + 
     		"</p><p class='choices'>" + 
@@ -154,7 +154,7 @@ $(document).ready(function() {
 		$("#start").click(nextQuestion);
 	}
 
-	// game clock currently set to 15 seconds
+	// game clock countdown
 	function timer() {
 		clock = setInterval(countDown, 1000);
 		function countDown() {
@@ -181,9 +181,7 @@ $(document).ready(function() {
 		else {
 			resultsScreen();
 		}
-	// console.log(questionCounter);
-	// console.log(questions[questionCounter].correctAnswer);
-	}
+	
 
 	// reset score and counter parameters on restart
 	function gameReset() {
@@ -195,12 +193,6 @@ $(document).ready(function() {
     function startGame() {
     	$("#gameScreen").html("<p>You have <span id='timer'>" + time + "</span> seconds left!</p>");
     	$("#start").hide();
-    	// $("#gameScreen").append("<div id='question'>");
-    	// var nextQuestion = questionContent(questionCounter);
-    	// $("#gameScreen").append(nextQuestion);
-
-		// $("#gameScreen").append("<p>" + questions[questionCounter].question + "</p><p>" + questions[questionCounter].choices[0] + "</p><p>" + questions[questionCounter].choices[1] + "</p><p>" + questions[questionCounter].choices[2] + "</p><p>" + questions[questionCounter].choices[3] + "</p>");
-		// questionCounter++;
 		questionContent();
     	timer();
     	userTimeout();
