@@ -1,0 +1,37 @@
+body { 
+	background: url(../images/wallpaper.jpg);
+	background-size: cover;
+	font-family: sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-family: cursive;
+	color: pink;
+	padding: 25px;
+	text-shadow: 2px 2px teal;
+}
+
+#gameScreen
+{
+ background-color: pink;
+}
+.answer,
+#timer {
+	font-weight: 500;
+}
+
+.choices {
+	text-align: center;
+	border: groove 2px black;
+	border-radius: 5%;
+	margin: 0 35%;
+}
+
+.choices:hover {
+	background-color: teal;
+	color: white;
+}
+
+
